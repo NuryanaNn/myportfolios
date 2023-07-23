@@ -1,0 +1,950 @@
+@font-face /*perintah untuk memanggil font eksternal*/
+  {
+    font-family: 'Cyborg'; 
+    src: url('Cyborg/Cyborg.otf');
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Cyborg';
+    height: 10000px;
+    background-color: #050810;
+    overflow-x: hidden;
+}
+
+img {
+    pointer-events: none;
+    z-index: 9999;  
+  }
+
+header .navbar{
+    background-color: #10e956;
+    padding: .5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+
+header .logo img{
+    height: 50px;
+}
+
+.navbar.change{
+    padding-bottom: 5rem;
+}
+
+header .burger{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    cursor: pointer;
+    
+}
+
+@keyframes wobbble{
+    0%{
+        transform: translateZ(0) scale(1);
+    }
+    15%{
+        transform: translate3d(-25%,0,0) rotate(-5deg) scale(1.1);
+    }
+    30%{
+        transform: translate3d(20%,0,0) rotate(3deg) scale(1.2);
+    }
+    45%{
+        transform: translate3d(-15%,0,0) rotate(-3deg) scale(1.3);
+    }
+    60%{
+        transform: translate3d(10%,0,0) rotate(2deg) scale(1.2);
+    }
+    75%{
+        transform: translate3d(-5%,0,0) rotate(-1deg) scale(1.1);
+    }
+    100%{
+        transform: translateZ(0) scale(1);
+    }
+}
+
+header .bars1{
+    width: 70px;
+    background-color: #000;
+    height: 7px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+header .bars2{
+    width: 55px;
+    background-color: #000;
+    height: 7px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+header .bars3{
+    width: 45px;
+    background-color: #000;
+    height: 7px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+/* Active State */
+.bars1.change{
+    transform: rotate(-45deg) translate(-4px, 7px);
+    transition: .5s;
+}
+
+.bars2.change{
+   opacity: 0;
+}
+
+.bars3.change{
+    transform: rotate(45deg) translate(-8px, -13px);
+    transition: .5s;
+    width: 70px;
+}
+
+
+/* Sidebar */
+.sidebarSci{
+    background-color: #1e2128;
+    position: fixed;
+    opacity: 0 ;
+    top: 0;
+    z-index: 200;
+    width: 60%;
+    height: 100%;
+    transition: .5s;
+}
+
+.sidebarSci .cardWrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.sidebarSci .card{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.sidebarSci .card::before{
+    width: 100%;
+    height: 0;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #10e956;
+    transition: 1s;
+}
+
+.sidebarSci .card:hover::before{
+    height: 100%;
+    transition: .5s;
+}
+
+.sidebarSci .card .cardText{
+    transform: rotate(-90deg);
+    width: 100%;
+    margin-top: 150px;
+}
+
+.sidebarSci .card .cardText a{
+    font-size: 70px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebarSci .card .cardImg{
+    width: 100px;
+    transform: rotate(-90deg);
+}
+
+.sidebarSci .card .cardImg img{
+    width: 100%;
+}
+
+.sidebarSci .card1{
+    background-color: #333333
+}
+
+@keyframes fadeInLeft {
+    0%{
+        opacity: 0;
+        transform: translate3d(-100%,0,0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateZ(0);
+    }   
+}
+
+
+.sidebarSci .card2{
+    background-color: #0077b5;
+}
+
+.sidebarSci .card3{
+    background-color: #FF4B4B;
+}
+
+.sidebarSci .card4{
+    background-color: #AC0042;
+}
+
+.sidebar{
+    background-color: #1e2128;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 200;
+    width: 40%;
+    height: 80%;
+    transition: .5s;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    padding: 4rem 4%;
+    transition: .5s;
+}
+
+.sidebar ul li{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidebar ul li a:hover{
+    color: rgba(44, 158, 80, 0.3);
+    transition-delay: 0s;
+}
+
+.sidebar ul li a{
+    color: #10e956;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 700;
+    transition: .5s;
+}
+
+.sidebar ul li a:hover::before{
+    opacity: 1;
+    letter-spacing: 6px;
+    transition-delay: 0.5s;
+}
+
+.sidebar ul li a::before{
+    content: attr(data-text);
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 0.35em;
+    color: #3bffe8;
+    text-shadow: 0 0 10px #3bffe8,
+    0 0 30px #3bffe8,
+    0 0 80px #3bffe8;
+    font-weight: 500;
+    letter-spacing: 40px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.sidebarSci.change{
+    opacity: 1;
+    transition: .5s;
+}
+
+.sidebar.change{
+    opacity: 1;
+    transition: .5s;
+}
+
+.hero{
+    padding: 2rem 5%;
+    background-image: url(hero.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 680px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+    padding-top: 150px;
+}
+
+.hero .overlay{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.hero .cardText{
+    z-index: 10;
+    width: 700px;
+    animation: fadeInLeft 2s ease forwards;
+}
+
+@keyframes fadeInLeft {
+    0%{
+        opacity: 0;
+        transform: translate3d(-100%,0,0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateZ(0);
+    }   
+}
+
+
+
+.hero .cardText .icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(16, 233, 86, 0.1);
+    width: 400px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.hero .cardText p{
+    color: #10e956;
+    font-size: 25px;
+}
+
+.hero .cardText img{
+    width: 50px;
+    animation: wobble 2.5s infinite;
+}
+
+@keyframes wobble {
+    0%{
+        transform: translateZ(0) scale(1);
+    }
+    15%{
+        transform: translate3d(-25%,0,0) rotate(-5deg) scale(1.1);
+    }
+    30%{
+        transform: translate3d(20%,0,0) rotate(3deg) scale(1.2);
+    }
+    45%{
+        transform: translate3d(-15%,0,0) rotate(-3deg) scale(1.3);
+    }
+    60%{
+        transform: translate3d(10%,0,0) rotate(2deg) scale(1.2);
+    }
+    75%{
+        transform: translate3d(-5%,0,0) rotate(-1deg) scale(1.1);
+    }
+    100%{
+        transform: translate3d(-5%,0,0) rotate(-1deg) scale(1.1);
+    }
+}
+
+.mainTitle{
+    color: #fff;
+}
+
+.mainTitle h1{
+    font-size: 60px;
+}
+
+.mainTitle span{
+    color: #10e956;
+}
+
+.hero .heroImg{
+    animation: fadeInRight 2s ease forwards;
+}
+
+@keyframes fadeInRight {
+    0%{
+        opacity: 0;
+        transform: translate3d(100%,0,0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateZ(0);
+    }   
+}
+
+
+
+
+.hero .heroImg svg{
+    position: relative;
+    z-index: 10;
+    width: 500px;
+}
+
+/* Tools */
+.tools{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 5%;
+    flex-direction: column;
+    position: relative;
+}
+
+.textScroll{
+    position: absolute;
+    top: 50px;
+}
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #10e956;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    transition: all linear 0.1s;
+  }
+  #cursor-blur {
+    height: 300px;
+    width: 300px;
+    background-color: rgba(16, 233, 86, .3);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(80px);
+    z-index: 9;
+    transition: all linear 0.4s;
+  }
+
+  #scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+  }
+  #scroller::-webkit-scrollbar {
+    display: none;
+  }
+  #scroller-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  #scroller h4 {
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    
+    margin-right: 20px;
+    transition: all linear 0.3s;
+    color: #10e956;
+    -webkit-text-stroke: 2px #ffffff;
+  }
+  #scroller h4:hover {
+    color: #95c11e;
+    -webkit-text-stroke: 2px #95c11e;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+
+.tools .title{
+    align-items: center;
+    background: #12141d;
+    border-radius: 12px;
+    box-shadow: inset 0 0 4px 1px #14e956;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    margin-bottom: 5rem;
+    padding: 0.8rem 2rem;
+    position: relative;
+    z-index: 100;
+}
+
+.tools .title h1{
+    color: #14e956;
+    font-weight: 900;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.toolsContent .cardWrapper{
+    display: flex;
+    width: 870px;
+    background-color: #0c8c34;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    margin-top: 10px;
+}
+
+.toolsContent .card{
+    background-color: #021709;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 200px;
+    margin-right: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.toolsContent .card::before{
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: linear-gradient(#00ccff, #d400d4);
+    animation:animate 4s linear infinite;
+}
+
+.toolsContent .card::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: #021709;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(350deg);
+    }
+}
+
+.toolsContent .cardText{
+    position: relative;
+    z-index: 20;
+}
+
+.toolsContent .card .icon{
+    margin-right: 5px;
+    position: relative;
+    z-index: 20;
+}
+
+.toolsContent .card  svg{
+    width: 30px;
+    height: 30px;
+}
+
+.toolsContent .card img{
+    width: 30px;
+    height: 30px;
+}
+
+
+/* Showcase Section */
+.showcase{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    flex-direction: column;
+}
+
+.showcase .title{
+    align-items: center;
+    background: #12141d;
+    border-radius: 12px;
+    box-shadow: inset 0 0 4px 1px #14e956;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    margin-bottom: 5rem;
+    padding: 0.8rem 2rem;
+}
+
+.showcase .title h1{
+    color: #14e956;
+    font-weight: 900;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+
+    #drag-container, #spin-container {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: auto;
+        transform-style: preserve-3d;
+        transform: rotateX(-10deg);
+    }
+  
+  #drag-container img, #drag-container video {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    font-size: 50px;
+    text-align: center;
+    /* -webkit-box-shadow: 0 0 8px #fff;
+            box-shadow: 0 0 8px #fff;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005); */
+  }
+  
+  /* #drag-container img:hover, #drag-container video:hover {
+    -webkit-box-shadow: 0 0 15px #fffd;
+            box-shadow: 0 0 15px #fffd;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+  }
+   */
+  #drag-container p {
+    font-family: Serif;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+            transform: translate(-50%,-50%) rotateX(90deg);
+    color: #fff;
+  }
+  
+  #ground {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+            transform: translate(-50%,-50%) rotateX(90deg);
+    background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent);
+  }
+  
+  #music-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  @-webkit-keyframes spin {
+    from{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    } to{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  
+  @keyframes spin {
+    from{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    } to{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  @-webkit-keyframes spinRevert {
+    from{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    } to{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+  }
+  @keyframes spinRevert {
+    from{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    } to{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+  }
+
+
+
+  .projects{
+    padding: 1rem 5%;
+  }
+
+  .projects .card{
+    width: 300px;
+    height: 500px;
+}
+
+.projects .card .cardImg,
+  .projects .card img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .projectBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+  
+
+
+
+.btnProjects{
+    box-shadow: rgba(20, 233, 86, 0.74) 9px 7px 32px -11px;
+    cursor: pointer;
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-family: Cyborg;
+    position: relative;
+    text-transform: uppercase;
+    background: linear-gradient(315deg, rgb(20, 233, 86), rgb(114, 242, 154)) rgb(20, 233, 86);
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 7px;
+    outline: none;
+    padding: 1rem 3rem;
+    transition: all 0.3s ease-in-out 0s;
+    margin-top: 30px;
+}
+
+.btnProjects::after{
+    content: '';
+    width: 100%;
+    height: 120%;
+    border: 4px solid #10e956;
+    position: absolute;
+    top: -12px;
+    left: -1px;
+    animation: pulse 2s linear infinite;
+    border-radius: 10px;
+}
+
+@keyframes pulse {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    
+    100% {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:480px) {
+    .sidebarSci{
+        position: fixed;
+        opacity: 0 ;
+        top: 4rem;
+        z-index: 200;
+        width: 100%;
+        height: 42%;
+        transition: .5s;
+    }
+    
+    .sidebarSci .cardWrapper{
+        width: 100%;
+        height: 100%;
+        display: block;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .sidebarSci .card{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+        padding: 5%;
+        margin-top: 10px;
+    }
+    
+    .sidebarSci .card .cardText{
+        transform: rotate(0deg);
+        width: 100%;
+        margin-top: 0;
+        height: 50px;
+    }
+
+    .sidebarSci .card .cardText a{
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .sidebarSci .card .cardImg{
+        width: 50px;
+        transform: rotate(0deg);
+    }
+
+    .sidebar{
+        background-color: #1e2128;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 200;
+        width: 100%;
+        height: 50%;
+        transition: .5s;
+        opacity: 0;
+        padding: 1rem 4%;
+    }
+
+    .sidebar ul{
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar ul li a{
+        font-size: 30px;
+        color: #10e956;
+        text-decoration: none;
+    } 
+        
+    .hero{
+        padding: 1rem 5%;
+        background-image: url(hero.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 680px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: space-around;
+        padding-top: 100px;
+        flex-wrap: wrap;
+    }
+        
+    .hero .cardText{
+        width: 350px;
+    }
+
+    .hero .cardText .icon{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: rgba(16, 233, 86, 0.1);
+        width: 350px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+    }
+    
+    .mainTitle h1{
+        font-size: 30px;
+    }
+    
+
+    .hero .heroImg svg{
+        position: relative;
+        z-index: 10;
+        width: 300px;
+    }
+    
+        .btnProjects{
+        box-shadow: rgba(20, 233, 86, 0.74) 9px 7px 32px -11px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 900;
+        font-family: Cyborg;
+        position: relative;
+        text-transform: uppercase;
+        background: linear-gradient(315deg, rgb(20, 233, 86), rgb(114, 242, 154)) rgb(20, 233, 86);
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        border-radius: 7px;
+        outline: none;
+        padding: 1rem 3rem;
+        transition: all 0.3s ease-in-out 0s;
+        margin-top: 30px;
+    }
+    
+
+}
