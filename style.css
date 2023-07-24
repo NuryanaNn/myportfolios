@@ -422,6 +422,7 @@ header .bars3{
 
 .toolsContent{
     z-index: 50;
+    margin-top: 50px;
 }
 
 #cursor {
@@ -642,6 +643,7 @@ header .bars3{
     align-items: center;
     justify-content: center;
     padding: 1rem 0;
+    margin-top: 50px;
     flex-direction: column;
 }
 
@@ -790,7 +792,7 @@ header .bars3{
 .btnProjects{
     box-shadow: rgba(20, 233, 86, 0.74) 9px 7px 32px -11px;
     cursor: pointer;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 900;
     font-family: Cyborg;
     position: relative;

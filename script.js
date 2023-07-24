@@ -23,9 +23,10 @@ let swiper = new Swiper(".mySwiper",{
     loop:true,
     centeredSlides:true,
     autoplay:{
-        delay:2500,
+        delay:2000,
         disbledonInteraction:true,
     },
+    
 })
 
 var crsr = document.querySelector("#cursor");
