@@ -13,7 +13,6 @@
 
 body{
     font-family: 'Cyborg';
-    height: 10000px;
     background-color: #050810;
     overflow-x: hidden;
 }
@@ -839,6 +838,129 @@ header .bars3{
   }
 
 
+  .quotes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+  }
+
+  .quotes .card{
+    width: 700px;
+    background-image: url(quoteBg.png);
+    padding: 3rem 2rem;
+    border: 2px solid #10e956;
+    border-radius: 20px;
+    color: #fff;
+    position: relative;
+  }
+
+  .quotes h3{
+    font-size: 40px;
+  }
+
+  .quotes .quotesIcon1{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 20px;
+    top: -20px;
+  }
+
+  .quotes .quotesIcon2{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    bottom: -20px;
+  }
+
+
+  .connect{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.connect .title{
+    align-items: center;
+    background: #12141d;
+    border-radius: 12px;
+    box-shadow: inset 0 0 4px 1px #14e956;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    margin-bottom: 5rem;
+    padding: 0.8rem 2rem;
+}
+
+.connect .title h1{
+    color: #14e956;
+    font-weight: 900;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.connect .connectContent{
+    display: flex;
+}
+
+.connect .connectContent img{
+    width: 100px;
+}
+
+.connect .connectContent .card{
+    width: 340px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.connect .connectContent .card h3{
+    color: #fff;
+    font-size: 40px;
+}
+
+.connect .connectContent .card1{
+    background-color: #333333;
+}
+
+.connect .connectContent .card2{
+    background-color: #0077b5;
+}
+
+.connect .connectContent .card3{
+    background-color: #FF4B4B;
+}
+
+.connect .connectContent .card4{
+    background-color: #AC0042;
+}
+
+.newsLetter{
+    background-color: #10e956;
+    padding: 2rem;
+    text-align: center;
+}
+
+
+.newsLetter a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+}
+
+
+footer{
+    background-color: #333333;
+    padding: 2rem ;
+    color: #10e956;
+    text-align: center;
+}
 
 
 
@@ -993,5 +1115,46 @@ header .bars3{
     .tools .overlay{
         display: none;
     }
+
+    
+  .quotes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+
+    .quotes .card{
+        width: 300px;
+        background-image: url(quoteBg.png);
+        padding: 3rem 2rem;
+        border: 2px solid #10e956;
+        border-radius: 20px;
+        color: #fff;
+        position: relative;
+      }
+    
+      .quotes h3{
+        font-size: 20px;
+      }
+      
+    .connect .connectContent{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .connect .connectContent img{
+        width: 100px;
+    }
+
+    .connect .connectContent .card{
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
 
 }
