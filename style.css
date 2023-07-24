@@ -987,6 +987,8 @@ footer{
 
 
 @media (max-width:480px) {
+    
+
     .sidebarSci{
         position: fixed;
         top: 4rem;
@@ -1053,7 +1055,7 @@ footer{
     }
 
     .sidebar ul li a{
-        font-size: 30px;
+        font-size: 60px;
         color: #10e956;
         text-decoration: none;
     } 
