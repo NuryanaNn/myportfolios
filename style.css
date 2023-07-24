@@ -652,21 +652,16 @@ header .bars3{
   }
   
   #ground {
-    width: 900px;
-    height: 900px;
+    width: 400px;
+    height: 400px;
     position: absolute;
     top: 100%;
     left: 50%;
-    -webkit-transform: translate(-50%,-50%) rotateX(90deg);
-            transform: translate(-50%,-50%) rotateX(90deg);
+    transform: translate(-50%,-50%) rotateX(90deg);
     background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent);
   }
   
-  #music-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+
   
   @-webkit-keyframes spin {
     from{
@@ -809,7 +804,6 @@ header .bars3{
 @media (max-width:480px) {
     .sidebarSci{
         position: fixed;
-
         top: 4rem;
         z-index: 200;
         width: 100%;
