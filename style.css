@@ -22,6 +22,11 @@ img {
     z-index: 9999;  
   }
 
+  .navbar.change body{
+    overflow: hidden;
+  }
+
+
 header .navbar{
     background-color: #10e956;
     padding: .5rem 5%;
