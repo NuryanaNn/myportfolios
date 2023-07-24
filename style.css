@@ -129,7 +129,6 @@ header .bars3{
     z-index: 200;
     width: 60%;
     height: 100%;
-    transition: .5s;
 }
 
 .sidebarSci .cardWrapper{
@@ -149,7 +148,6 @@ header .bars3{
     flex-direction: column-reverse;
     position: relative;
     cursor: pointer;
-    transition: 1s;
 }
 
 .sidebarSci .card::before{
@@ -225,12 +223,10 @@ header .bars3{
     z-index: 200;
     width: 40%;
     height: 80%;
-    transition: .5s;
     visibility: hidden;
     display: flex;
     justify-content: center;
     padding: 4rem 4%;
-    transition: .5s;
 }
 
 .sidebar ul li{
@@ -252,7 +248,7 @@ header .bars3{
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 700;
-    transition: .5s;
+
 }
 
 .sidebar ul li a:hover::before{
@@ -281,12 +277,10 @@ header .bars3{
 
 .sidebarSci.change{
     visibility: visible;
-    transition: .5s;
 }
 
 .sidebar.change{
     visibility: visible;
-    transition: .5s;
 }
 
 .hero{
