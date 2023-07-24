@@ -124,7 +124,7 @@ header .bars3{
 .sidebarSci{
     background-color: #1e2128;
     position: fixed;
-    opacity: 0 ;
+    visibility: hidden;
     top: 0;
     z-index: 200;
     width: 60%;
@@ -226,7 +226,7 @@ header .bars3{
     width: 40%;
     height: 80%;
     transition: .5s;
-    opacity: 0;
+    visibility: hidden;
     display: flex;
     justify-content: center;
     padding: 4rem 4%;
@@ -280,12 +280,12 @@ header .bars3{
 }
 
 .sidebarSci.change{
-    opacity: 1;
+    visibility: visible;
     transition: .5s;
 }
 
 .sidebar.change{
-    opacity: 1;
+    visibility: visible;
     transition: .5s;
 }
 
@@ -614,7 +614,6 @@ header .bars3{
     text-transform: uppercase;
     font-size: 50px;
 }
-
 
     #drag-container, #spin-container {
         position: relative;
