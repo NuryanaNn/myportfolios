@@ -55,6 +55,61 @@ var typed = new Typed("#typed2", {
     loop: true
 });
 
+
+
+
+(function(){
+
+	"use strict";
+	
+	$(".tabs").each(function(){
+		var tabs = $(this);
+		var panes = tabs.find(".tab-pane");
+
+		var nav = tabs.find(".tabs-nav button");
+		
+		nav.click(function(e){
+			e.preventDefault();
+			var target = $(this).val();
+			var tab = tabs.find(".tab-pane#"+target);
+			nav.removeClass("active");
+			panes.removeClass("active");
+			tab.addClass("active");
+			$(this).addClass("active");
+		});
+		
+		var mobileLayout = function() {
+			tabs.removeClass("wrapped");
+			var nav_top = false;
+			var wrapped = false;
+			$.each(nav, function(){
+				var this_top = $(this).offset().top;
+				if(nav_top && nav_top != this_top) {
+					wrapped = true;
+					return false;
+				}
+				nav_top = this_top;
+			});
+			
+			console.log(wrapped);
+			
+			if(wrapped) {
+				tabs.addClass("wrapped");
+			} else {
+				tabs.removeClass("wrapped");
+			}
+		};
+		
+		mobileLayout();
+		$(window).resize(function(){
+			mobileLayout();
+		});
+	});
+
+})();
+
+
+
 var radius = 130; // how big of the radius
 var autoRotate = true; // auto rotate or not
 var rotateSpeed = -60; // unit: seconds/360 degrees
@@ -167,7 +222,5 @@ document.onmousewheel = function(e) {
   radius += d;
   init(1);
 };
-
-
 
 
