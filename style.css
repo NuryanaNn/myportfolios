@@ -417,10 +417,12 @@ header .bars3{
   .tabs {
     display: flex;
     flex-flow: column nowrap;
-    width: 100%;
-    margin-top: 50px;
+    width: 70%;
+    /* margin-top: 50px; */
     position: relative;
     z-index: 50;
+    border-radius: 10px;
+    overflow: hidden;
   }
 
   @media (max-width: 640px) {
@@ -436,8 +438,9 @@ header .bars3{
     .tabs.wrapped .tabs-nav button {
       margin-right: 0;
       padding: 0 0.5em;
-      color: black;
-      background-color: rgba(0, 0, 0, 0.1);
+      color: #fff;
+      background-color: #10e956;
+      /* background-color: rgba(0, 0, 0, 0.1); */
       height: 40px;
       line-height: 40px;
       margin: 0 0.5em 0.5em 0;
@@ -492,7 +495,7 @@ header .bars3{
     height: 50px;
     line-height: 50px;
     padding: 0 2em;
-    background-color: #e0e0e0;
+    background-color: #10e956;
     font-size: 1em;
     font-weight: 400;
     margin-right: 10px;
@@ -513,12 +516,34 @@ header .bars3{
     display: block;
   }
 
+  .tabs-content .card{
+    display: flex;
+    align-items: center;
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .tabs-content .card h3{
+    letter-spacing: 2px;
+  }
+
+  .tabs-content .card .icon{
+    margin-right: 20px;
+  }
+
+  .tabs-content .card .icon i{
+    font-size: 30px;
+  }
+
 /* Tools */
 .tools{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5rem 5%;
+    padding: 1rem 5%;
+    margin-top: 50px;
     flex-direction: column;
     position: relative;
 }
